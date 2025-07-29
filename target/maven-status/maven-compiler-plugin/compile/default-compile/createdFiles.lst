@@ -1,0 +1,8 @@
+com/enroll/StudentEnrollmentApplication.class
+com/enroll/controller/StudentController.class
+com/enroll/model/Employee.class
+com/enroll/TestMongoApplication.class
+com/enroll/model/Product.class
+com/enroll/service/StudentService.class
+com/enroll/model/Student.class
+com/enroll/repository/StudentRepository.class
