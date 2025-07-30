@@ -1,0 +1,22 @@
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:replace="${pageTitle} :: title">Student App</title>
+</head>
+<body>
+
+<!-- Include header -->
+<div th:replace="fragments :: header"></div>
+
+<!-- Content block -->
+<div>
+    <div th:replace="${content}"></div>
+</div>
+
+<!-- Include footer -->
+<div th:replace="fragments :: footer"></div>
+
+</body>
+</html>
