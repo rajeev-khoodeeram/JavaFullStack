@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import ca.cloudace.section3.model.Student;
 
@@ -30,7 +32,34 @@ public class StudentController {
                 new Student(3L, "Carol", 25)
         );
         model.addAttribute("students", students);
+        return "students"; // will map to students.html
+    }
+
+
+ @GetMapping("/studentss")
+    public String listStudentWithThyme(Model model) {
+            students = List.of(
+                new Student(1L, "Alice", 23),
+                new Student(2L, "Bob", 30),
+                new Student(3L, "Carol", 25)
+        );
+        model.addAttribute("students", students);
         return "studentss"; // will map to students.html
+    }
+
+    @GetMapping("/students/new")
+    public String showForm(Model model) {
+        model.addAttribute("student", new Student());
+        return "form-student";
+    }
+
+    @PostMapping("/student-registration")
+    public String handleForm(@ModelAttribute Student student, Model model) {
+        // Save or process the student here
+        //model.addAttribute("student", student);
+        model.addAttribute("student", new Student());
+        model.addAttribute("message", "Student registered successfully!");
+        return "form-student"; // Redirect to the students list page
     }
 
     public void removeStudent(Student student) {

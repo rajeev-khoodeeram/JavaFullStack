@@ -13,6 +13,11 @@ public class Student {
     private String name;
     private int age;
 
+    public Student() {
+        // Default constructor
+    }
+
+
     public Student(Long id, String name, int age) {
         this.id = id;
         this.name = name;

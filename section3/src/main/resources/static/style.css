@@ -1,0 +1,41 @@
+  table {
+            width: 50%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        thead tr {
+            background-color: #4CAF50;
+            color: white;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 16px;
+        }
+
+        tbody tr {
+            background-color: #f9f9f9;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #e9f5ff;
+        }
+
+        tbody tr:hover {
+            background-color: #d0ebff;
+            cursor: pointer;
+        }
+
+        tbody td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }

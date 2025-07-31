@@ -2,25 +2,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Students</title>
-</head>
-<body>
-
-<!-- Render this using the layout -->
-<div th:replace="layout :: layout(~{::title}, ~{::section})">
-
-    <!-- Page title (can be used in layout if needed) -->
+      <!-- Title Fragment -->
     <th:block th:fragment="title">
-        <title>List of Students</title>
+        <title>Student List of Section 3 of Full Stack Java</title>
     </th:block>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{style.css}" />
+</head>    
+<body>
+<div th:replace="~{layout :: layout(~{::title}, ~{::section})}">
 
-    <!-- Main content fragment -->
+  
+
+    <!-- Main Content Fragment -->
     <th:block th:fragment="section">
         <h1>Student List</h1>
         <table border="1">
             <thead>
                 <tr>
-                    <th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th>
+                    <th>ID</th><th>First Name</th><th>Last Name</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,9 +32,14 @@
                 </tr>
             </tbody>
         </table>
+    
+    <p th:text="'Total Students: ' + ${#lists.size(students)}"></p>
+    <p th:if="${#lists.isEmpty(students)}">No students found.</p>
+
     </th:block>
 
-</div>
-
+    
+    </div>
+   
 </body>
 </html>

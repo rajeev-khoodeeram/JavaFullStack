@@ -2,21 +2,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title th:replace="${pageTitle} :: title">Student App</title>
+    <!-- This will be replaced by the title passed in -->
+    <th:block th:replace="${title}"></th:block>
 </head>
 <body>
+<!-- HEADER -->
+    <div th:fragment="layout(title, section)">
+        <header th:insert="~{fragments :: header}"></header>
 
-<!-- Include header -->
-<div th:replace="fragments :: header"></div>
+        <!-- MAIN CONTENT -->
+        <main th:replace="${section}"></main>
 
-<!-- Content block -->
-<div>
-    <div th:replace="${content}"></div>
-</div>
+        <!-- FOOTER -->
+        <footer th:insert="~{fragments :: footer}"></footer>
 
-<!-- Include footer -->
-<div th:replace="fragments :: footer"></div>
+
+    </div>
 
 </body>
 </html>
