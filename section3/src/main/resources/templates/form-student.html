@@ -15,10 +15,12 @@
     <form th:action="@{/student-registration}" th:object="${student}" method="post">
         <label>Student Name:</label>
         <input type="text" th:field="*{name}" placeholder="Enter student name" required/>
-        <br/>
+         <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></div>
+        <br/><br/>
         <label>Student Age:</label>
         <input type="number" th:field="*{age}" placeholder="Enter student age" required/>
-        <br/>
+        <div th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></div>
+        <br/><br/>
         <button type="submit">Submit</button>
         <button type="reset">Reset</button> 
     </form>

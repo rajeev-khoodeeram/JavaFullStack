@@ -7,11 +7,24 @@
  * @author:  CloudAce  - Rajeev Khoodeeram
  * @version: 1.0
  */
+
 package ca.cloudace.section3.model;
+
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+
+
 public class Student {
+    
     private Long id;
+    
+    @NotBlank(message = "Name is required")
     private String name;
-    private int age;
+
+    @Min(value = 18, message = "Age must be at least 18")
+    @Max(value = 100, message = "Age must be at most 30")
+    private int age;    
 
     public Student() {
         // Default constructor
@@ -32,6 +45,7 @@ public class Student {
         this.id = id;
     }
 
+      
     public String getName() {
         return name;
     }

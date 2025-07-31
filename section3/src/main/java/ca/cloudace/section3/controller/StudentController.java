@@ -6,11 +6,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import ca.cloudace.section3.model.Student;
+import jakarta.validation.Valid;
 
 @Controller
 public class StudentController {
@@ -54,11 +56,18 @@ public class StudentController {
     }
 
     @PostMapping("/student-registration")
-    public String handleForm(@ModelAttribute Student student, Model model) {
+    public String handleForm(@Valid @ModelAttribute Student student, BindingResult result, Model model) {
         // Save or process the student here
         //model.addAttribute("student", student);
+
+        if (result.hasErrors()) {
+        model.addAttribute("message", "Form submission errors!");    
+        }
+        else
+        {
         model.addAttribute("student", new Student());
         model.addAttribute("message", "Student registered successfully!");
+        }
         return "form-student"; // Redirect to the students list page
     }
 
