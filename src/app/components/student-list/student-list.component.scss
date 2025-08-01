@@ -1,0 +1,49 @@
+/* Base table styling for presentation */
+table {
+  width: 50%;
+  border-collapse: collapse; /* Ensures borders are collapsed */
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Soft shadow for depth */
+  border-radius: 8px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+th, td {
+  padding: 12px 15px; /* Comfortable padding */
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0; /* Subtle horizontal lines */
+}
+
+th {
+  background-color: #343a40; /* Dark grey background */
+  color: #ffffff; /* White text for contrast */
+  padding: 12px 15px; /* Comfortable padding */
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase; /* For a professional look */
+  letter-spacing: 0.5px;
+}
+
+/* --- Alternate Row Colors --- */
+
+/* Even rows: Default white or very light color */
+tbody tr:nth-child(even) {
+  background-color: #ffffff; /* Pure white */
+}
+
+/* Odd rows: Slightly darker shade of grey */
+tbody tr:nth-child(odd) {
+  background-color: #ADD8E6; /* Very light grey, almost white */
+}
+
+/* Optional: Hover effect for rows */
+tbody tr:hover {
+  background-color: #e8f0fe; /* A soft blue on hover */
+  cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+} 
