@@ -1,0 +1,64 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* Using margin-right on all links except the last one */
+.app-nav .nav-link {
+  color: #61dafb;
+  text-decoration: none;
+  padding: 10px 15px; /* Add some internal padding to make them clickable */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-right: 20px; /* Space to the right of each link */
+}
+
+.app-nav .nav-link:last-child {
+  margin-right: 0; /* Remove margin from the last link */
+}
+
+/* Or, more robustly, apply margin to siblings */
+.app-nav .nav-link + .nav-link {
+  margin-left: 20px; /* Applies 20px margin to the left of any nav-link that follows another nav-link */
+}
+
+/* If your nav is a flex container, 'gap' is even better (see point 4) */
