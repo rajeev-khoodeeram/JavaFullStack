@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Student } from '../models/student/student.module';
 
 interface student {
   id: number; 
@@ -19,5 +20,10 @@ export class StudentService {
   getStudents(): Observable<student[]> {
     return this.http.get<student[]>(this.apiUrl);
   }
+
+  createStudent(student: student): Observable<student> {
+    return this.http.post<student>(this.apiUrl, student);
+  }
+
 
 }
